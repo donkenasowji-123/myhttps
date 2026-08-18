@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jawaharlal Nehru Technological University Kakinada<br>Kakinada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Use min-height to allow content to expand */
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f2f5; /* Light grey background for the whole page */
+    }
+
+    .header-section {
+      background-color: #ffffff;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More prominent shadow for header */
+      flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    }
+
+    .university-logo {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 80px; /* Adjust logo size */
+      height: 80px;
+      border-radius: 50%; /* Make it circular */
+      object-fit: cover;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .university-title {
+      color: #800000; /* Maroon color */
+      font-size: 36px; /* Adjusted font size for better fit */
+      font-weight: 700;
+      text-align: center;
+      flex-grow: 1;
+      margin: 0 80px; /* Adjusted margin to give more space for wrapping */
+      white-space: normal; /* Allow text to wrap */
+      overflow: visible; /* Allow overflow to be visible (text will wrap) */
+      text-overflow: clip; /* Remove ellipsis as text will wrap */
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px; /* Increased padding for content area */
+      box-sizing: border-box;
+    }
+
+    .section-title {
+      font-size: 32px;
+      color: #367c39;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+      gap: 25px; /* Increased gap between buttons */
+      max-width: 1200px; /* Max width for the grid */
+      width: 100%;
+      padding: 0 20px; /* Padding for the grid */
+      box-sizing: border-box;
+    }
+
+    .my-button {
+      padding: 20px 15px; /* Adjusted padding for larger buttons */
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 12px; /* More rounded corners */
+      cursor: pointer;
+      font-size: 20px; /* Adjusted font size */
+      font-weight: 600;
+      text-align: center;
+      transition:
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+      outline: none;
+      border: 2px solid transparent;
+      display: flex; /* Use flex for centering text vertically */
+      align-items: center;
+      justify-content: center;
+      min-height: 80px; /* Adjusted minimum height for all buttons */
+    }
+
+    .my-button:hover {
+      background-color: #388e3c;
+      transform: translateY(-5px) scale(1.03); /* More pronounced lift and scale */
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35); /* Stronger shadow */
+      border-color: #388e3c;
+    }
+
+    .my-button:active {
+      background-color: #2b5e2e;
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      border-color: #2b5e2e;
+    }
+
+    .my-button:focus {
+      box-shadow: 0 0 0 5px rgba(76, 175, 80, 0.7); /* More visible focus ring */
+      border-color: #4caf50;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .button-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .my-button {
+        font-size: 18px; /* Adjusted font size */
+        padding: 18px;
+        min-height: 75px; /* Adjusted min-height */
+      }
+      .university-title {
+        font-size: 32px; /* Adjusted font size */
+        margin: 0 60px; /* Adjusted margin */
+      }
+      .university-logo {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-section {
+        flex-direction: column; /* Stack logo and title vertically */
+        padding: 15px;
+      }
+      .university-logo {
+        position: static; /* Remove absolute positioning */
+        transform: none;
+        margin-bottom: 10px; /* Space between logo and title */
+        width: 60px;
+        height: 60px;
+      }
+      .university-title {
+        font-size: 26px; /* Adjusted font size */
+        margin: 0; /* Remove horizontal margins */
+        text-align: center;
+      }
+      .button-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        padding: 0 10px;
+      }
+      .my-button {
+        font-size: 16px; /* Adjusted font size */
+        padding: 15px;
+        min-height: 70px; /* Adjusted min-height */
+      }
+      .section-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .university-title {
+        font-size: 22px; /* Adjusted font size */
+      }
+      .my-button {
+        font-size: 14px; /* Adjusted font size */
+        padding: 12px 15px;
+        min-height: 60px; /* Adjusted min-height */
+      }
+      .button-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+        gap: 10px;
+      }
+      .section-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <style>
+  #maintenance-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Change to any color you like */
+    z-index: 99999; /* Ensures it stays on top of everything */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: sans-serif;
+  }
+</style>
+
+
+  <div class="header-section">
+    <!-- Placeholder for University Logo -->
+    <a href='https://jntuksdc.co.in/'><img src="logo.webp" class="university-logo"></a>
+    <h1 class="university-title">JAWAHARLAL NEHRU TECHNOLOGICAL UNIVERSITY KAKINADA</h1>
+  </div>
+
+  <div class="main-content">
+    <h2 class="section-title">EXAMINATION SECTION SERVICES</h2>
+    <div class="button-grid">
+      <button id="myButton1" class="my-button">CGPA TO PERCENTAGE</button>
+      <button id="myButton2" class="my-button">APPLY FOR PC/CMM</button>
+      <button id="myButton3" class="my-button">APPLY FOR OD</button>
+      <button id="myButton4" class="my-button">APPLY FOR DUPLICATE OD OR PC</button>
+      <button id="myButton5" class="my-button">APPLY FOR PROJECT MEMO</button>
+      <button id="myButton6" class="my-button">APPLY FOR MIGRATION</button>
+      <button id="myButton7" class="my-button">APPLY FOR TRANSCRIPTS</button>
+      <button id="myButton11" class="my-button">APPLY FOR CORRECTION IN CERTIFICATES</button>
+      <button id="myButton8" class="my-button">APPLY FOR WES</button>
+      <button id="myButton9" class="my-button">APPLY FOR GENUINITY VERIFICATION</button>
+      <button id="myButton10" class="my-button">APPLY FOR MEDIUM OF INSTRUCTIONS</button>
+      <button id="myButton12" class="my-button">FREQUENTLY ASKED QUESTIONS</button>
+    </div>
+  </div>
+
+  
+
+  <script>
+    // Define navigation functions for each page
+    function CGPA_To_Percentage_Navigate() {
+      window.location.href = "CGPA_Conversion.html";
+    }
+
+    function PC_CMM_Navigate() {
+      window.location.href = "pc_cmm_options.html";
+    }
+
+    function OD_Navigate() {
+      window.location.href = "ODOptions.html";
+    }
+
+    function Duplicate_Navigate() {
+      window.location.href = "DuplicateOptions.html";
+    }
+
+    function ProjectMemo_Navigate() {
+      window.location.href = "Project_Memo.html";
+    }
+
+    function Migration_Navigate() {
+      window.location.href = "Migration.html";
+    }
+
+    function Transcripts_Navigate() {
+      window.location.href = "Transcripts.html";
+    }
+
+    function WES_Navigate() {
+      window.location.href = "WESOptions.html";
+    }
+
+    function Genuinity_Navigate() {
+      window.location.href = "GenuinityOptions.html";
+    }
+
+    function MOI_Navigate() {
+      window.location.href = "Medium_of_Instructions.html";
+    }
+
+    function Correction_Navigate() {
+      window.location.href = "Correction_Certificates.html";
+    }
+    function FAQ_Navigate() {
+      console.log("Frequently Asked Questions button clicked!");
+      window.location.href = "faq_page.html"; // Redirect to the new FAQ page
+    }
+    
+    
+    // Event listeners for all buttons
+    document.getElementById('myButton1').addEventListener('click', CGPA_To_Percentage_Navigate);
+    document.getElementById('myButton2').addEventListener('click', PC_CMM_Navigate);
+    document.getElementById('myButton3').addEventListener('click', OD_Navigate);
+    document.getElementById('myButton4').addEventListener('click', Duplicate_Navigate);
+    document.getElementById('myButton5').addEventListener('click', ProjectMemo_Navigate);
+    document.getElementById('myButton6').addEventListener('click', Migration_Navigate);
+    document.getElementById('myButton7').addEventListener('click', Transcripts_Navigate);
+    document.getElementById('myButton11').addEventListener('click', Correction_Navigate);
+    document.getElementById('myButton8').addEventListener('click', WES_Navigate);
+    document.getElementById('myButton9').addEventListener('click', Genuinity_Navigate);
+    document.getElementById('myButton10').addEventListener('click', MOI_Navigate);
+    document.getElementById('myButton12').addEventListener('click', FAQ_Navigate); // New button event listener
+
+    
+</script>
+</body>
+</html>
